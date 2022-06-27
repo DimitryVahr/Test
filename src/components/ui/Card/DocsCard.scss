@@ -1,0 +1,74 @@
+@import "~@/styles/common.scss";
+
+.docsCard {
+  max-width: 416px;
+  width: 100%;
+  padding: 16px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: block;
+  color: cl("dark");
+  background:cl('background-secondary');
+  margin-bottom: 32px;
+  transition: 0.3s;
+
+  &:hover {
+    background: cl('accent-lighter');
+    color:cl('white');
+
+    .docsCard__icon {
+      color: cl('white');
+    }
+
+    .docsCard__size {
+      color: cl('white', 0.7);
+    }
+  }
+
+  &:active {
+    background: cl('accent-darker');
+    
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include break-lg {
+    background: transparent;
+    margin-bottom: 0;
+    padding: 12px 0;
+    display: flex;
+  }
+
+  @include break-xl {
+    max-width: inherit;
+  }
+
+  &__icon {
+    color: cl('icon-input');
+    display: block;
+    margin-bottom: 44px;
+    margin-left: 2px;
+    transition: 0.3s;
+
+    @include break-lg {
+      width: 20px;
+      height: 24px;
+      margin-right: 18px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__size {
+    margin-top: 4px;
+    display: block;
+    color: cl('text-secondary');
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    transition: 0.3s;
+  }
+}

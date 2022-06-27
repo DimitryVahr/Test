@@ -1,0 +1,147 @@
+@import "~@/styles/common.scss";
+
+.additionalServiceCard {
+  cursor: pointer;
+
+  &:nth-child(3) {
+    pointer-events: none;
+    cursor: default;
+
+    .additionalServiceCard__link {
+      pointer-events: none;
+      cursor: default;
+    }
+    .additionalServiceCard__link_iconed {
+      display: none;
+    }
+  }
+
+  &:hover &{
+    &__content {
+      box-shadow: 0px 0px 0px 8px cl("accent-lighter");
+      background-color: cl("accent-lighter");
+    }
+  }
+
+  &:active &{
+    &__content {
+      box-shadow: 0px 0px 0px 8px cl("accent-darker");
+      background-color: cl("accent-darker");
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: cl("white");
+
+    &_iconed {
+      display: flex;
+      align-items: center;
+      padding: 16px 0;
+      line-height: 24px;
+    }
+  }
+
+  &__poster {
+    width: 100%;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    margin: -90px auto 0;
+    padding: 40px 32px 30px;
+    background-color: cl("accent");
+    position: relative;
+    z-index: 1;
+    max-width: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 320px;
+    color: cl("white");
+    box-shadow: 0px 0px 0px 0px cl("accent");
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    @include break-md {
+      height: 256px;
+    }
+  }
+
+  &__logo {
+    width: 200px;
+    height: 80px;
+    margin-bottom: 32px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-bottom: 26px;
+  }
+
+  &__icon {
+    margin-left: 8px;
+  }
+
+  @include break-xl {
+    &__content {
+      max-width: calc(100% - 60px);
+    }
+  }
+
+  @include break-lg {
+    &__content {
+      max-width: calc(100% - 40px);
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  @include break-md {
+    &__poster {
+      height: 224px;
+    }
+
+    &__content {
+      margin-top: -54px;
+      padding: 28px 22px 20px;
+      max-width: calc(100% - 60px);
+    }
+
+    &__logo {
+      width: 160px;
+      height: 64px;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      max-width: calc(100% - 40px);
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.special .additionalServiceCard__content {
+  background: black !important;
+}
+
+.special .additionalServiceCard__logo img {
+  background: black !important;
+}

@@ -1,0 +1,12 @@
+@import "~@/styles/common.scss";
+
+.infoInsurer {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+
+  & + & {
+    margin-top: 20px;
+  }
+}

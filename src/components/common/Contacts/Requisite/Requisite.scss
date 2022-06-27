@@ -1,0 +1,48 @@
+@import "~@/styles/common.scss";
+
+.requisite {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 0 ;
+  border-bottom: 1px solid cl('border');
+
+   @include break-lg {
+     display: block;
+     border-bottom: none;
+     padding: 0;
+
+     &+& {
+      margin-top: 20px;
+    }
+   }
+
+  &__property {
+    display: block;
+    min-width: 192px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    margin-right: 32px;
+
+    @include break-lg {
+      font-size: 16px;
+      line-height: 24px;
+      margin-right: 0;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__value {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+
+    @include break-lg {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+}

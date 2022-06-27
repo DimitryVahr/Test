@@ -1,0 +1,91 @@
+@import "~@/styles/common.scss";
+
+.infoBlock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  @include break-lg {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    max-width: 416px;
+    min-width: 416px;
+    width: 416px;
+    margin-bottom: 24px;
+    margin-right: 32px;
+
+    @include break-xl {
+      min-width: 320px;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    @include break-lg {
+      min-width: 0px;
+      max-width: none;
+      margin-right: none;
+    }
+
+    &_text {
+      display: block;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 48px;
+      color: cl("dark");
+      margin-bottom: 32px;
+
+      @include break-lg {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 24px;
+      }
+    }
+
+    &_description {
+      width: 100%;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+
+      @include break-lg {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 864px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include break-xl {
+      display: block;
+    }
+
+    &_single {
+      display: block;
+      margin-right: 0;
+    }
+
+    &_column {
+      & + & {
+        margin-left: 32px;
+      }
+
+      @include break-xl {
+        & + & {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

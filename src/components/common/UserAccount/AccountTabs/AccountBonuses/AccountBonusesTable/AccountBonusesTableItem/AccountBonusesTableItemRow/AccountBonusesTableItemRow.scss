@@ -1,0 +1,92 @@
+@import "~@/styles/common.scss"; 
+
+.accountBonusesTableItemRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 12px 20px;
+  border-top: 1px solid cl('divider');
+
+
+  &:last-child {
+    border-bottom: 1px solid cl('divider');
+  }
+
+  @include break-md {
+    display: block;
+    padding: 12px 0;
+  }
+
+  &__fromTo {
+    height: auto;
+    width: 42%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: cl('accent');
+    line-height: 24px;
+    padding: 0;
+    text-align: left;
+    &:hover {
+      color: cl('accent-lighter');
+    }
+    &:active {
+      color: cl('accent-darker')
+    }
+
+    @include break-md {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__status {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color:cl('text-secondary');
+
+    @include break-md {
+      width: 50%;
+      display: inline-block;
+    }
+  }
+
+  &__bonuses {
+    width: 7%;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 400;
+    font-style: 14px;
+    line-height: 20px;
+
+    @include break-md {
+      width: 50%;
+      display: inline-flex;
+    }
+
+    &--paid {
+      color: cl('error');
+    }
+
+    &--accrued{
+      color: cl('success');
+    }
+
+    &--wait {
+      color: cl('text-disabled')
+    }
+
+    &--cancel {
+      color: cl('text-disabled');
+      text-decoration: line-through;
+    }
+  }
+}

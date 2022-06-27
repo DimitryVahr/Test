@@ -1,0 +1,27 @@
+@import "~@/styles/common.scss";
+
+.flightsSchedule {
+  &__day {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: cl("text-disabled");
+
+    &--active {
+      color: cl("dark");
+    }
+
+    & + & {
+      margin-left: 6px;
+    }
+  }
+}
+
+
+.special .flightsSchedule__day {
+  color: lightgrey !important;
+}
+
+.special .flightsSchedule__day--active {
+  color: black !important;
+}

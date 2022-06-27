@@ -1,0 +1,9 @@
+@import "~@/styles/common.scss";
+.headerNav {
+  display: flex;
+  margin-right: 80px;
+
+  @include break-lg {
+    display: none;
+  }
+}

@@ -1,0 +1,95 @@
+@import "~@/styles/common.scss";
+
+.transportationWorkHeadbanner {
+  &__wrapper {
+    color: cl("white");
+    margin: 175px 0 92px;
+    width: 100%;
+    max-width: 854px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 56px;
+
+    & > p {
+      max-width: 416px;
+      margin-right: 32px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &--mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    &__title {
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      font-size: 120px;
+      line-height: 140px;
+    }
+  }
+
+  @media (max-width: 1140px) {
+    &__title {
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      font-size: 100px;
+      line-height: 100px;
+    }
+  }
+
+  
+
+  @include break-lg {
+    &__wrapper {
+      margin: 138px auto;
+    }
+
+    &__content {
+      margin-top: 32px;
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__title {
+      font-size: 52px;
+      line-height: 56px;
+      letter-spacing: unset;
+    }
+  }
+
+  @include break-sm {
+    &__content {
+      & > p { 
+        font-size: 16px;
+        line-height: 24px;
+        max-width: none;
+        margin-right: 0;
+      }
+
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: block;
+      }
+    }
+
+    &__title {
+      font-size: 38px;
+      line-height: 50px;
+    }
+  }
+
+  // &__wrapper {
+  //   margin: 119px 0 92px;
+  // }
+}

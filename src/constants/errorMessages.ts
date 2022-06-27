@@ -1,0 +1,33 @@
+export interface IErrorMessages {
+  required: string,
+  loginOrPassword: string,
+  emailFormat: string,
+  phoneLength: string,
+  passwordLength: string,
+  fieldDigits: string,
+  notSameAsOldPassword: string,
+  notSameAsOldPhone: string,
+  wrongPassword: string,
+  userNotFound: string,
+  emailTaken: string,
+  passwordAlreadyResetOrTimeout: string,
+  wrongFormat: string,
+  tooLong: string,
+}
+
+export const ErrorMessages: IErrorMessages = {
+  required: 'Обязательное поле',
+  loginOrPassword: 'Неверный логин или пароль',
+  emailFormat: 'Неверный формат почты',
+  phoneLength: 'Телефон введен не полностью',
+  passwordLength: 'Не менее 6 символов',
+  fieldDigits: 'Поле должно содержать определенное количество цифр',
+  notSameAsOldPassword: 'Новый пароль должен отличаться от старого',
+  notSameAsOldPhone: 'Новый телефон должен отличаться от старого',
+  wrongPassword: 'Неверный пароль',
+  userNotFound: 'Пользователь с таким логином не найден',
+  emailTaken: 'Этот email уже используется',
+  passwordAlreadyResetOrTimeout: 'Ссылка для сброса пароля недействительна',
+  wrongFormat: 'Неверный формат',
+  tooLong: 'Слишком длинное значение',
+}

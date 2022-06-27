@@ -1,0 +1,6 @@
+{
+	"appId": "com.nutnet.vityaz",
+	"appName": "vityaz",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,122 @@
+@import "~@/styles/common.scss";
+
+.button {
+
+  font-family: $primary-font-family;
+
+  &Primary {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: cl("accent");
+    color: cl("white");
+    padding: 16px 32px;
+    transition: 0.3s;
+    border: none;
+    height: 56px;
+
+    &:hover {
+      background-color: cl("accent-lighter");
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: cl("accent-darker");
+    }
+
+    &[disabled] {
+      background-color: cl("text-disabled");
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &Secondary {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: cl("white");
+    border: 1px solid cl("accent");
+    color: cl("accent");
+    padding: 15px 31px;
+    transition: 0.3s;
+    height: 56px;
+
+    &:hover {
+      border: 1px solid cl("accent-lighter");
+      color: cl("accent-lighter");
+      cursor: pointer;
+    }
+
+    &:active {
+      border: 1px solid cl("accent-darker");
+      color: cl("accent-darker");
+    }
+
+    &[disabled] {
+      border: 1px solid cl("text-disabled");
+      color: cl("text-disabled");
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &Unstyled, &FullUnstyled, &Link {
+    background-color: transparent;
+    border: none;
+    max-width: none;
+    max-height: none;
+    min-width: 0;
+    min-height: 0;
+    transition: 0.3s;
+    height: 56px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &FullUnstyled {
+    padding: 0;
+    height: auto;
+  }
+
+  &Link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: cl('accent');
+    padding: 0;
+    height: auto;
+  }
+
+  &_fluid {
+    width: 100%;
+  }
+
+  &_fluidMobile {
+    @include break-lg {
+      width: 100%;
+    }
+  }
+
+  &_noBorder {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  &_withIcon {
+    display: flex;
+  }
+}
+
+.special .button {
+  color: cl('accent') !important;
+}
+
+

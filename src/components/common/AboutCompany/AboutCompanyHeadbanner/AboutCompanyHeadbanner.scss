@@ -1,0 +1,16 @@
+@import "~@/styles/common.scss";
+
+.aboutCompanyHeadbanner {
+  &__content {
+    margin: 177px 0 291px;
+    padding: 96px 0;
+    color: cl("white");
+  }
+
+  @include break-lg {
+    &__content {
+      padding: 0;
+      margin: 341px 0 128px 0
+    }
+  }
+}

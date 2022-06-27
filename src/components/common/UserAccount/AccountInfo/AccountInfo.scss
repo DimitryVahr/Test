@@ -1,0 +1,193 @@
+@import "~@/styles/common.scss";
+
+.accountInfo {
+  margin-right: 144px;
+  min-width: 416px;
+
+  &--mobile {
+    @include break-lg {
+      display: none;
+    }
+  }
+
+  @include break-lg {
+    min-width: 0;
+    width: 100%;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 48px;
+
+    @include break-lg {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: cl("text-secondary");
+  }
+
+  &__bonusesWrap {
+    display: flex;
+    border-bottom: 1px solid cl("divider");
+    padding: 22px 0;
+
+    @include break-lg {
+      padding: 16px 0;
+      border-bottom: none;
+    }
+  }
+
+  &__bonusesItem {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    width: 100%;
+
+    @include break-lg {
+      width: fit-content;
+      flex-direction: row;
+      align-items: center;
+      & + & {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  &__number {
+    margin-top: 4px;
+
+    @include break-lg {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 0;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+
+  &__name {
+    margin-top: 34px;
+    margin-bottom: 20px;
+
+    @include break-lg {
+      display: none;
+    }
+  }
+
+  &__infoWrap {
+    display: flex;
+    flex-direction: column;
+    & + & {
+      margin-top: 20px;
+    }
+
+    @include break-lg {
+      display: none;
+    }
+  }
+
+  &__btnChangeNumber, &__btnChangeEmail {
+    height: auto;
+    padding: 0;
+  }
+
+  &__bonusWord {
+    @include break-lg {
+      display: none;
+    }
+  }
+}
+
+.accountInfoMobile {
+  display: none;
+  width: 100%;
+  padding: 16px 0 0 0 ;
+  color: black;
+  height: 40px;
+  overflow: hidden;
+  transition: height 0.3s;
+
+  &--opened {
+    height: 140px;
+
+    .accountInfoMobile__infoWrap {
+      opacity: 1;
+    }
+
+    .accountInfoMobile__iconOpen:after {
+      transform: rotate(-45deg);
+    }
+
+    .accountInfoMobile__iconOpen:before {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    margin-left: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__icon {
+    padding: 0px;
+  }
+
+  &__iconOpen {
+    position: relative;
+    width: 13px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 6.5px;
+
+    &:after {
+      position: absolute;
+      content: " ";
+      left: 0px;
+      width: 8px;
+      height: 2px;
+      background: cl("dark");
+      transition: all 0.3s ease 0s;
+      transform: rotate(45deg);
+    }
+    &:before {
+      position: absolute;
+      content: " ";
+      right: 0;
+      width: 8px;
+      height: 2px;
+      background: cl("dark");
+      transition: all 0.3s ease 0s;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__infoWrap {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: 0.2s;
+    margin-top: 7px;
+  }
+
+  @include break-lg {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,121 @@
+@import "~@/styles/common.scss";
+
+.accountPassengerInfo {
+  width: 100%;
+
+  @include break-lg {
+    margin-top: 20px;
+  }
+
+  &__goBackBtn {
+    color: cl('accent');
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    margin-top: 44px;
+    margin-bottom: 28px;
+
+    @include break-lg {
+      margin-top: 20px;
+    }
+  }
+
+  &__goBackBtnIcon {
+    margin-right: 16px ;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__name {
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    &+& {
+      margin-top: 16px;
+    }
+  }
+
+  &__itemTitle {
+    color: cl('text-secondary');
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__itemInfo {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__scanDocBtn {
+    color: cl('accent');
+    padding: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    height: auto;
+    margin-top: 16px;
+  }
+
+  &__btnWrap{
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include break-sm {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__changeInfoBtn {
+    @include break-sm {
+      color: cl('accent');
+      background: cl('transparent');
+      padding: 12px 0;
+      height: auto;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background: cl('transparent');
+        color: cl('accent-lighter');
+      }
+
+      &:active {
+        background: cl('transparent');
+        color: cl('accent-darker');
+      }
+    }
+  }
+
+  &__deletePassenger{
+    display: flex;
+    align-items: center;
+    color: cl('icon-input');
+    height: auto;
+
+    @include break-sm {
+      padding:12px 0 ;
+      height: auto;
+    }
+  }
+
+  &__deletePassengerText {
+    color: cl('text-secondary');
+    margin-left: 10px;
+  }
+}

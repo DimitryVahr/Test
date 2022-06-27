@@ -1,0 +1,78 @@
+@import "~@/styles/common.scss";
+
+.headBannerImg {
+  width: 100%;
+  height: 152px;
+  background: url("~@/assets/img/headbannerAccount/mountain.jpg") center no-repeat !important;
+  background-size: cover !important;
+
+  @include break-lg {
+    display: none;
+  }
+
+  &_company {
+    background-image: url("~@/assets/img/headbannerAccount/mountainCompany.jpg") !important;
+  }
+
+  &_hidden {
+    background-image: none !important;
+  }
+}
+
+.userAccount {
+  &__container {
+    display: flex;
+    margin-top: 48px;
+
+    @include break-xl {
+      display: block;
+      margin-top: 32px
+    }
+  }
+
+  &_textCommon {
+    @include text(16px, 20px, "dark", 400);
+    overflow-wrap: break-word;
+  }
+
+  &_textCommonSmall {
+    @include text(14px, 20px, "dark", 400);
+  }
+
+  &_textCommonBigger {
+    @include text(18px, 28px, "dark", 400);
+
+    @include break-lg {
+      @include text(16px, 24px);
+    }
+  }
+
+  &_textSecondary {
+    @include text(14px, 20px, "text-secondary");
+  }
+
+  &_textBold {
+    @include text(24px, 30px, "dark", 600);
+  }
+
+  &_textBoldSmall {
+    @include text(18px, 28px, "dark", 700);
+  }
+
+  &_textLink {
+    @include text(16px, 24px, "accent", 600);
+  }
+
+  &_textLinkThin {
+    @include text(18px, 28px, "accent", 400);
+
+    @include break-lg {
+      @include text(16px, 24px);
+    }
+  }
+
+  &_textLinkThinSmall {
+    @include text(16px, 24px, "accent", 400);
+  }
+
+}

@@ -1,0 +1,85 @@
+@import "~@/styles/common.scss";
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  &__button {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__value {
+    margin: 0 8px;
+    text-align: center;
+  }
+
+  @include break-lg {
+    &__label {
+      display: none;
+    }
+  }
+
+  &Primary {
+    padding: 8px 12px;
+    background-color: cl("white");
+    color: cl("dark");
+
+    .counter__button {
+      color: cl("accent");
+
+      &[disabled], &_disabled {
+        color: cl("text-disabled");
+        cursor: default;
+      }
+    }
+
+    @include break-md {
+      padding: 0;
+      min-width: 120px;
+      background-color: transparent;
+      border: 1px solid cl("accent");
+
+      .counter__button {
+        color: cl("accent");
+        height: 38px;
+        min-height: 38px;
+
+        &[disabled], &_disabled {
+          color: cl("accent", 0.3);
+        }
+      }
+    }
+  }
+
+  &Secondary {
+    .counter__button {
+      color: cl("accent");
+      border: 1px solid cl("accent");
+      transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+      &:hover {
+        color: cl("accent-lighter");
+        border-color: cl("accent-lighter");
+      }
+
+      &:active {
+        color: cl("accent-darker");
+        border-color: cl("accent-darker");
+      }
+
+      &:disabled, &_disabled {
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+  }
+}

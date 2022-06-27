@@ -1,0 +1,74 @@
+@import "~@/styles/common.scss";
+
+.transportationVipHeadbanner {
+  &__wrapper {
+    color: cl("white");
+    margin: 260px 0 287px;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 56px;
+
+    & > p {
+      max-width: 416px;
+      margin-right: 32px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  @media (max-width: 1140px) {
+    &__title {
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      font-size: 120px;
+      line-height: 140px;
+    }
+  }
+
+  @include break-lg {
+    &__wrapper {
+      margin: 127px auto;
+    }
+
+    &__content {
+      margin-top: 32px;
+    }
+
+    &__button {
+      display: none;
+    }
+
+    &__title {
+      font-size: 52px;
+      line-height: 56px;
+      letter-spacing: unset;
+    }
+  }
+
+  @media (max-width: 425px) {
+    &__title {
+      font-size: 56px;
+    }
+  }
+
+  @include break-sm {
+    &__content {
+      & > p {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: none;
+        margin-right: 0;
+      }
+
+      &--desktop {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

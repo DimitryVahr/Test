@@ -1,0 +1,32 @@
+@import "~@/styles/common.scss";
+
+.safetyComfort {
+  padding: 120px 0;
+
+  &__cards {
+    margin-top: 72px;
+    padding-left: 226px;
+    display: flex;
+  }
+
+  @include break-xl {
+    &__cards {
+      padding-left: 0;
+    }
+  }
+
+  @include break-lg {
+    padding: 80px 0;
+
+    &__cards {
+      margin-top: 56px;
+    }
+  }
+
+  @include break-md {
+    &__cards {
+      flex-direction: column;
+      margin-top: 40px;
+    }
+  }
+}

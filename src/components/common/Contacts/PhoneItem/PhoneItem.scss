@@ -1,0 +1,63 @@
+@import "~@/styles/common.scss";
+
+.phoneItem {
+  display: flex;
+  align-items: flex-start;
+  text-decoration: none;
+  color: cl("dark");
+  max-width: 416px;
+  width: 100%;
+
+  &:hover .phoneItem__number {
+    color: cl('accent');
+  }
+
+  &:active .phoneItem__number {
+    color: cl('accent-darker');
+  }
+
+  & + & {
+    margin-top: 20px;
+  }
+
+  @include break-lg {
+    padding: 12px 0;
+    &+& {
+      margin-top: 0px;
+    }
+  }
+
+  &__icon {
+    color: cl("accent");
+    margin-right: 12px;
+    min-width: 24px;
+    height: 24px;
+
+    @include break-lg {
+      margin-right: 15px;
+      margin-left: 1px;
+    }
+  }
+
+  &__number {
+    width: 180px;
+    display: block;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    transition: 0.3s;
+
+    @include break-lg {
+      color: cl('accent');
+    }
+  }
+
+  &__description {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: cl("text-secondary");
+    margin-top: 4px;
+  }
+}

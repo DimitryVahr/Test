@@ -1,0 +1,207 @@
+@import "~@/styles/common.scss";
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.forms {
+
+  &__succes-icon {
+    margin-bottom: 32px;
+
+    @include break-lg {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    color: cl('dark');
+    margin-bottom: 40px;
+
+    @include break-lg {
+      margin-bottom: 32px;
+
+      &.notify {
+        margin-bottom: 24px;
+      }
+    }
+
+  }
+
+  &__sectionTitle {
+    margin-bottom: 20px;
+  }
+
+  &__switcher {
+    margin-bottom: 32px;
+
+    @include break-lg {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @include break-lg {
+      margin-bottom: 32px;
+    }
+
+    [data-component] {
+      margin-bottom: 20px;
+
+      @include break-lg {
+        margin-bottom: 16px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    [data-component="Checkbox"] {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 15px;
+
+    &_two {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__wrapper_right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__btn_blue_small {
+    font-size: 18px;
+    line-height: 28px;
+    font-family: $primary-font-family;
+    color: cl("accent");
+    height: 28px;
+    margin-top: 20px;
+
+    @include break-lg {
+      margin-top: 16px;
+      height: 24px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &:hover {
+      color: cl('accent-lighter');
+    }
+
+    &:active {
+      color: cl('accent-darker');
+    }
+  }
+
+  &__common-text {
+    color: cl('dark');
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 32px;
+
+    &_small {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+
+    @include break-lg {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 24px;
+
+      &_small {
+        margin-bottom: 8px;
+      }
+    }
+
+    &_no-gutters {
+      margin: 0;
+    }
+  }
+
+  &__row {
+    margin-bottom: 20px;
+
+    @include break-lg {
+      margin-bottom: 16px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+
+  &__secondary-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: cl('text-tertiary');
+  }
+
+  &__submit-btn {
+    margin-bottom: 20px;
+
+    @include break-lg {
+      margin-bottom: 16px;
+      margin-top: auto;
+    }
+  }
+
+  &__subbtn {
+    padding: 16px 0;
+    font-family: $primary-font-family;
+    font-weight: 600;
+    color: cl("accent");
+
+    &:hover {
+      color: cl('accent-lighter');
+    }
+
+    &:active {
+      color: cl('accent-darker');
+    }
+
+    &_mobile {
+      display: none;
+    }
+
+    @include break-lg {
+      &_desktop {
+        display: none;
+      }
+
+      &_mobile {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__shortInput {
+    @include break-lg-up {
+      max-width: 192px;
+    }
+  }
+
+  &__link {
+    @include text(18px, 28px, 'accent', 400);
+
+    @include break-lg {
+      @include text(16px, 24px)
+    }
+  }
+
+}

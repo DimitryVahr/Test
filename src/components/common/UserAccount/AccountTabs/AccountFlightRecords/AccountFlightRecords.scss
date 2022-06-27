@@ -1,0 +1,70 @@
+@import "~@/styles/common.scss";
+
+.flightRecords {
+  &__offerMainTitle {
+    margin: 48px 0 32px 0;
+
+    @include break-lg {
+      margin: 32px 0 24px 0;
+    }
+  }
+
+  &__sectionTitle {
+    margin-bottom: 16px;
+
+    @include break-lg {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__section {
+    @include break-lg {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__bonus {
+
+    &_add {
+      color: cl('success');
+    }
+
+    &_reduce {
+      color: cl('error');
+    }
+
+    &_block {
+      color: cl('text-disabled');
+    }
+
+    &_refund {
+      color: cl('text-disabled');
+      text-decoration: line-through;
+    }
+
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 56px;
+    background: cl("accent");
+    color: cl("white");
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background: cl("accent-lighter");
+    }
+
+    &:active {
+      background: cl("accent-darker");
+    }
+  }
+}

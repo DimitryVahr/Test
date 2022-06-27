@@ -1,0 +1,32 @@
+@import "~@/styles/common.scss";
+
+.accountProfile {
+  &__documentsScansBtn {
+    margin-top: 16px;
+
+    @include break-lg {
+      margin-top: 8px;
+    }
+  }
+
+  &__offerMainTitle {
+    margin: 48px 0 32px 0;
+
+    @include break-lg {
+      margin: 32px 0 16px 0;
+    }
+  }
+
+  &__changePasswordOfferBtn {
+    height: 48px;
+    padding: 12px 3px;
+  }
+}
+
+.accountProfileBtns {
+  &__loyaltyBtn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: block;
+  }
+}

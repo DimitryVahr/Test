@@ -1,0 +1,205 @@
+@import "~@/styles/common.scss";
+
+.reputation {
+  padding-bottom: 120px;
+
+  &__content {
+    margin: 110px 0 120px;
+  }
+  &__row {
+    display: flex;
+
+    &_images {
+      padding-right: 114px;
+      justify-content: space-between;
+    }
+
+    &_infrastructure {
+      margin-top: -33px;
+      justify-content: space-between;
+
+      .reputation__img_small {
+        margin-top: 112px;
+      }
+    }
+
+    &_control {
+      margin-top: 14px;
+      align-items: center;
+
+      .reputationDescriptionCard {
+        margin: -17px 0 0 144px;
+      }
+    }
+
+    &_enlargement {
+      margin-top: 134px;
+      justify-content: flex-end;
+      padding-right: 112px;
+
+      .reputationDescriptionCard {
+        margin-right: 144px;
+      }
+
+      .reputation__img_small {
+        margin-top: -56px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    &_small {
+      max-width: 304px;
+      max-height: 200px;
+    }
+
+    &_large {
+      max-width: 528px;
+      max-height: 352px;
+    }
+
+    &_full {
+      max-width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include break-xl {
+    &__row {
+      &_images {
+        padding-right: 0;
+      }
+
+      &_infrastructure {
+        margin-top: 40px;
+
+        .reputation__img_small {
+          margin-top: 70px;
+        }
+      }
+
+      &_control {
+        margin-top: 48px;
+      }
+    }
+  }
+
+  @include break-lg {
+    padding-bottom: 78px;
+
+    &__content {
+      margin: 40px 0 48px;
+    }
+
+    &__row {
+      &_images {
+        padding-right: 0;
+
+        .reputation__img_small {
+          margin-right: 40px;
+        }
+      }
+
+      &_infrastructure {
+        .reputation__img_small {
+          margin-left: 45px;
+          margin-top: 60px;
+        }
+      }
+
+      &_control {
+        margin-top: 70px;
+
+        .reputationDescriptionCard {
+          margin-left: 80px;
+        }
+      }
+
+      &_enlargement {
+        padding-right: 0;
+        margin-top: 120px;
+
+        .reputationDescriptionCard {
+          margin-right: 80px;
+        }
+      }
+    }
+  }
+
+  @include break-md {
+    &__row {
+      &_images {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+
+        .reputation__img_small {
+          margin: 48px 0 0;
+        }
+      }
+
+      &_infrastructure {
+        flex-direction: column;
+        margin: 48px 0 0;
+
+        .reputation__img_small {
+          margin: 48px 0 0;
+        }
+      }
+
+      &_control {
+        flex-direction: column;
+        margin: 48px 0 0;
+
+        .reputationDescriptionCard {
+          margin: 48px 0 0;
+        }
+      }
+
+      &_enlargement {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        margin: 48px 0 0;
+
+        .reputation__img_small {
+          margin: 0;
+        }
+
+        .reputationDescriptionCard {
+          margin: 48px 0 0;
+        }
+      }
+    }
+  }
+
+  @include break-sm {
+    &__container {
+      padding: 0;
+    }
+
+    &__img {
+      &_large {
+        max-width: 100%;
+      }
+
+      &_small {
+        max-width: 288px;
+        max-height: 190px;
+      }
+
+      &_full {
+        height: 180px;
+      }
+
+      img {
+        display: block;
+      }
+    }
+  }
+}

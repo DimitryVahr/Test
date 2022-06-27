@@ -1,0 +1,59 @@
+@import "~@/styles/common.scss";
+
+.inputFile-none {
+  display: none;
+}
+
+.inputFile {
+  width: 100%;
+  @include break-md {
+    &__btn {
+      width: 100%;
+    }
+  }
+}
+
+.fileList {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.fileListItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: cl("accent");
+  height: 48px;
+
+  &__btn {
+    color: cl("accent");
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &:hover {
+      color: cl("accent-lighter");
+    }
+
+    &:active {
+      color: cl("accent-darker");
+    }
+  }
+
+  &__deleteBtn {
+    min-width: 24px;
+    height: 24px;
+    color: cl("icon-input");
+    cursor: pointer;
+    padding: 0;
+    margin-left: 24px;
+  }
+
+  &__fileName {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

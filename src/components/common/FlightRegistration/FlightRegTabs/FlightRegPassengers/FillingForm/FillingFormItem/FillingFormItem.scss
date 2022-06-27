@@ -1,0 +1,122 @@
+@import "~@/styles/common.scss";
+
+
+.fillingFormItem {
+  display: flex;
+  align-items: center;
+  & + & {
+    margin-top: 16px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: cl("accent");
+    text-decoration: none;
+  }
+
+  &__icon {
+    position: relative;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    border: 2px solid cl("text-disabled") !important;
+    margin-right: 8px;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+
+    &::before {
+      content: " ";
+      top: 5px;
+      left: 3px;
+      width: 2px;
+      height: 6px;
+      transform: rotate(-47deg);
+      position: absolute;
+      background: cl("text-disabled");
+      border-radius: 1px;
+    }
+
+    &::after {
+      content: " ";
+      top: 2px;
+      left: 7px;
+      width: 2px;
+      height: 9px;
+      transform: rotate(38deg);
+      position: absolute;
+      background: cl("text-disabled");
+      border-radius: 1px;
+    }
+  }
+  &--success{
+    .fillingFormItem__icon {
+      position: relative;
+      border-radius: 50%;
+      width: 17px;
+      height: 17px;
+      border: 2px solid cl("success") !important;
+      background: cl("success") !important;
+      margin-right: 8px;
+
+      &::before {
+        content: " ";
+        top: 5px;
+        left: 3px;
+        width: 2px;
+        height: 6px;
+        transform: rotate(-47deg);
+        position: absolute;
+        background: cl("white");
+        border-radius: 1px;
+      }
+
+      &::after {
+        content: " ";
+        top: 2px;
+        left: 7px;
+        width: 2px;
+        height: 9px;
+        transform: rotate(38deg);
+        position: absolute;
+        background: cl("white");
+        border-radius: 1px;
+      }
+    }
+  }
+
+  &--error{
+    .fillingFormItem__icon {
+      position: relative;
+      border-radius: 50%;
+      width: 17px;
+      height: 17px;
+      border: 2px solid cl("error") !important;
+      margin-right: 8px;
+
+      &::before {
+        content: " ";
+        top: 5px;
+        left: 3px;
+        width: 2px;
+        height: 6px;
+        transform: rotate(-47deg);
+        position: absolute;
+        background: cl("error");
+        border-radius: 1px;
+      }
+
+      &::after {
+        content: " ";
+        top: 2px;
+        left: 7px;
+        width: 2px;
+        height: 9px;
+        transform: rotate(38deg);
+        position: absolute;
+        background: cl("error");
+        border-radius: 1px;
+      }
+    }
+  }
+}

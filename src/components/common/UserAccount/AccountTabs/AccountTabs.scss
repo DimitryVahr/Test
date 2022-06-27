@@ -1,0 +1,255 @@
+@import "~@/styles/common.scss";
+
+.accountTabs {
+  width: 100%;
+  padding-bottom: 121px;
+
+  &__tabsBtnsWrapper {
+    margin-top: 10px;
+
+    @include break-lg {
+      margin-top: 12px;
+    }
+
+    &--mobile {
+      @include break-lg {
+        display:none
+      }
+    }
+
+  }
+
+  &__tabSlide {
+    width: auto;
+    margin-right: 32px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include break-lg {
+      margin-right: 16px;
+    }
+
+  }
+
+  &__tabBtn {
+    height: 38px;
+    border-bottom: 2px solid cl('text-disabled');
+    font-size: 16px;
+    line-height: 24px;
+    color: cl('dark');
+    display: flex;
+    transition: all 0s;
+
+    &_active {
+      font-weight: 700;
+      border-bottom: 2px solid cl('accent');
+    }
+
+    @include break-lg {
+      height: 34px;
+    }
+  }
+
+  &__tab {
+    width: 100%;
+  }
+
+  &__titleMain {
+    margin-top: 48px;
+    color: cl('black');
+
+    @include break-lg {
+      margin: 32px 0 24px 0;
+    }
+  }
+
+  &__titleMainUnderBtn {
+    margin-bottom: 48px;
+    color: cl('black');
+
+    @include break-lg {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__sectionTitle {
+    margin: 0 0 20px 0;
+    color: cl('dark');
+
+    @include break-lg {
+      margin: 0 0 16px 0;
+    }
+
+    &_desktop {
+      color: cl('dark');
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__section {
+    margin-top: 48px;
+    margin-bottom: 40px;
+
+    &+& {
+      margin-top: 32px;
+    }
+
+    @include break-lg {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__sectionSmall {
+    margin-bottom: 32px;
+
+    @include break-lg {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__row {
+    margin-bottom: 20px;
+
+    @include break-lg {
+      margin-bottom: 16px;
+    }
+
+    &_desktop {
+      margin-bottom: 20px;
+    }
+
+    &_mobile {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__bottomActions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include break-lg {
+      display: block;
+    }
+  }
+
+  &__bottomActionBtn {
+    @include break-lg {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &.link {
+        justify-content: start;
+        align-items: center;
+        height: 48px;
+        padding: 0;
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &__bottomActionBtnLink {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 48px;
+    padding: 0;
+  }
+
+  &__btnIcon {
+    margin-right: 8px;
+
+    &.distant {
+      margin-right: 16px;
+    }
+
+    @include break-lg {
+      &.link {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &__offerCard {
+    padding: 60px;
+    background-color: cl('background-secondary');
+
+    @include break-sm {
+      padding: 40px 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tableRow {
+    padding: 12px 20px;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid cl('divider');
+
+    &:first-child {
+      border-top: 1px solid cl('divider');
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include break-xl {
+      flex-direction: column;
+      height: 100px;
+    }
+  }
+
+  &__tableCell {
+    &_date {
+      width: 88px;
+      @include text(16px, 24px, "dark", 400);
+      margin-right: 32px;
+    }
+
+    &_route {
+      width: 460px;
+      @include text(16px, 24px, "accent", 400);
+      margin-right: 32px;
+    }
+
+    &_status {
+      width: 100px;
+      @include text(14px, 24px, "text-secondary", 400);
+    }
+
+    &_date, &_route, &status {
+      @include break-xl {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  &_mobileFullWidth {
+    @include break-sm {
+      margin: 0 -20px;
+    }
+  }
+
+  &__goBack {
+    margin: 48px 0 32px 0;
+
+    @include break-sm {
+      margin: 20px 0 8px 0;
+    }
+  }
+
+}

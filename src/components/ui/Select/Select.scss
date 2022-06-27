@@ -1,0 +1,196 @@
+@import "~@/styles/common.scss";
+
+.select {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  background-color: cl("background-input");
+  border: 1px solid transparent;
+
+  &__input {
+    font-family: $primary-font-family;
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    padding: 24px 12px 8px;
+    border: 1px solid transparent;
+    background: none;
+    outline: none;
+    caret-color: cl("accent");
+    font-size: 16px;
+    cursor: pointer;
+    transition: border 0.3s;
+
+    &:hover {
+      border: 1px solid cl("accent");
+    }
+
+    &--opened {
+      border: 1px solid cl("accent");
+
+      ~ .select__icon::after {
+        transform: rotate(-45deg);
+      }
+
+      ~ .select__icon::before {
+        transform: rotate(45deg);
+      }
+
+      ~ .select__items {
+        max-height: 242px;
+        overflow: auto;
+        z-index: 5;
+        pointer-events: all;
+      }
+    }
+
+    &--opened + .select__placeholder,
+    &:not(:placeholder-shown) + .select__placeholder {
+      top: 8px;
+      font-weight: 600;
+      color: cl("accent");
+      transform: scale(0.8);
+    }
+
+    &--opened &--overflow ~ .select__items {
+      overflow: hidden;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    height: 7px;
+    width: 13px;
+    right: 18px;
+    top: 50%;
+
+    &:after {
+      position: absolute;
+      content: " ";
+      left: 0.5px;
+      width: 8px;
+      height: 2px;
+      background: cl("icon-input");
+      transition: all 0.3s ease 0s;
+      transform: rotate(45deg);
+    }
+
+    &:before {
+      position: absolute;
+      content: " ";
+      right: 0;
+      width: 8px;
+      height: 2px;
+      background: cl("icon-input");
+      transition: all 0.3s ease 0s;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    color: cl("text-secondary");
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    transition: top 0.3s linear, left 0.3s linear, font-size 0.3s linear, font-weight 0.3s linear, transform 0.3s linear;
+    transform-origin: 0 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__items {
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 0 0 4px 4px;
+    top: calc(100% + 2px);
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s;
+    z-index: 3;
+    box-shadow: 0px 14px 25px rgba(0, 0, 0, 0.05);
+    background-color: cl('white');
+    pointer-events: none;
+  }
+
+  &--disabled {
+    background-color: cl("black", 0.01);
+    z-index: 0;
+
+    .select__placeholder {
+      color: cl("text-disabled");
+    }
+
+    .select__input {
+      color: cl("dark");
+      pointer-events: none;
+      cursor: default;
+
+      &--opened + .select__placeholder,
+      &:not(:placeholder-shown) + .select__placeholder {
+        top: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        color: cl("text-disabled");
+      }
+    }
+  }
+
+  &--error {
+    background-color: cl(background-input-error) !important;
+
+    .select__placeholder {
+      color: cl("error") !important;
+    }
+
+    ~ .select__error-description {
+      display: block;
+    }
+
+  }
+
+  &_white {
+    background-color: cl('white');
+  }
+
+  &__error {
+    color: cl("error");
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 3px 12px 0;
+    display: block;
+  }
+}
+
+.special .select__input {
+  height: 90px;
+}
+
+.special .select {
+  height: 90px;
+}
+
+.flightRegHeader .select__input,
+.flightFormsSmall__form .select__input,
+.flightRegHeader .select,
+.flightFormsSmall__form .select {
+  height: 64px;
+}
+
+.special .flightRegHeader .select__input {
+  height: 150px;
+}
+
+.special .select_white {
+  height: 100px !important;
+  input {
+    height: 100% !important;
+  }
+}

@@ -1,0 +1,85 @@
+@import "~@/styles/common.scss";
+
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  color: cl("dark");
+  cursor: pointer;
+  user-select: none;
+  width: fit-content;
+  padding: 12px 0;
+
+  @media (min-width: 1025px) {
+    &:hover {
+      .checkbox {
+        cursor: pointer;
+        background: cl("background-secondary");
+        color: cl("dark");
+      }
+    }
+  }
+
+  &--checked {
+    .checkbox {
+      border: 2px solid cl("accent");
+      background: cl("accent");
+      color: cl("white");
+    }
+    &:hover {
+      .checkbox {
+        border: 2px solid cl("accent-lighter");
+        background: cl("accent-lighter");
+        color: cl("white");
+      }
+    }
+
+    &:active {
+      .checkbox {
+        border: 2px solid cl("accent-darker");
+        background: cl("accent-darker");
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: default;
+    .checkbox {
+      border: 2px solid cl("text-disabled");
+      background: cl("text-disabled");
+      color: cl("white");
+    }
+    &:hover {
+      .checkbox {
+        background: cl("text-disabled");
+        color: cl("white");
+        cursor: default;
+      }
+    }  
+  }
+}
+
+.checkboxText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.checkboxMarker {
+  width: 12px;
+  height: 9px;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  margin-right: 18px;
+  border-radius: 4px;
+  background: cl("white");
+  border: 2px solid cl("text-disabled");
+  transition: 0.3s;
+  color: cl("transparent");
+}

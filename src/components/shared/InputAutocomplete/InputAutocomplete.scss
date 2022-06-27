@@ -1,0 +1,43 @@
+@import "~@/styles/common.scss";
+
+.input {
+  &Default {
+    &_autocomplete {
+      z-index: 5;
+    }
+  }
+  &__suggestions {
+    position: absolute;
+    top: 100%;
+    width: calc(100% + 2px);
+    transform: translateX(-1px);
+    z-index: 10;
+    box-shadow: 0px 14px 25px cl("black", 0.05);
+    background-color: cl("white");
+  }
+
+  &__suggestion {
+    &_hoverable:hover {
+      background-color: cl("accent-lighter", 0.05);
+    }
+
+    &-tip {
+      padding: 16px 12px;
+      display: inline-block;
+    }
+
+    &-subfield {
+      display: block;
+      font-size: 14px;
+      line-height: 16px;
+      margin-top: 4px;
+    }
+
+    a {
+      padding: 16px 12px;
+      width: 100%;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}

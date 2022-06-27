@@ -1,0 +1,95 @@
+@import "~@/styles/common.scss";
+
+.documentsGroup {
+  width: 100%;
+  max-width: 192px;
+  margin: 16px;
+
+  &__title {
+    height: 90px;
+  }
+
+  &_turnover {
+    max-width: 416px;
+  }
+
+  &__date {
+    font-size: 11px;
+    line-height: 12px;
+    margin: 8px 0 20px;
+    display: inline-block;
+  }
+
+  &__images {
+    display: flex;
+  }
+
+  &__image {
+    width: 100%;
+    position: relative;
+
+    // &:hover {
+    //   .documentsGroup__zoom {
+    //     transform: scale(1.2, 1.2);
+    //   }
+    // }
+
+    & + & {
+      margin-left: 32px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__zoom {
+    position: absolute;
+    right: 8px;
+    bottom: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: cl("white", 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:  0.2s ease-in-out;
+
+    &:hover {
+      // transform: scale(1.1);
+      background: cl('accent');
+      color: cl('white');
+    }
+
+    &:active{
+      background: cl('accent-darker');
+    }
+  }
+
+  @include break-md {
+    max-width: 100%;
+    margin: 14px 16px;
+
+    &__image {
+      max-width: 160px;
+
+      & + & {
+        margin-left: 15px;
+      }
+    }
+
+    &__date {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.special .documentsGroup {
+  max-width: 300px;
+
+}
+
+.special .documentsGroup__title {
+  height: 110px;
+}

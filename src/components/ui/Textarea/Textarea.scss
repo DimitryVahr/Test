@@ -1,0 +1,112 @@
+@import "~@/styles/common.scss";
+
+.inputText {
+    font-family: $primary-font-family;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    position: relative;
+    background: none;
+    width: 100%;
+    z-index: 0;
+    border: 1px solid transparent;
+
+    &__input {
+        font-family: $primary-font-family;
+        box-sizing: border-box;
+        display: block;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 96px;
+        height:100%;
+        padding: 28px 12px 8px;
+        font-size: 16px;
+        border: 1px solid transparent;
+        outline: none;
+        overflow: hidden;
+        caret-color: cl("accent");
+        background-color: cl("background-input");
+        cursor: pointer;
+        transition: border 0.3s;
+
+        &:hover,
+        &:focus {
+            border: 1px solid cl("accent");
+        }
+
+        &:focus + .inputText__placeholder,
+        &:not(:placeholder-shown) + .inputText__placeholder {
+            top: 8px;
+            font-weight: 600;
+            color: cl("accent");
+            transform: scale(0.8);
+        }
+    }
+
+    &__placeholder {
+        position: absolute;
+        color: cl("text-secondary");
+        top: 16px;
+        left: 12px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        transition: top 0.3s linear, left 0.3s linear, font-size 0.3s linear, font-weight 0.3s linear, transform 0.3s linear ;
+        transform-origin: 0 0;
+        border: 2px solid transparent;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    &--error {
+        .inputText__input {
+            background-color: cl(background-input-error);
+        }
+        .inputText__placeholder {
+            color: cl("error");
+        }
+
+        .inputText__input:focus + .inputText__placeholder,
+        .inputText__input:not(:placeholder-shown) + .inputText__placeholder {
+            color: cl("error");
+        }
+
+        ~ .errorDescription {
+            display: block;
+        }
+    }
+
+    &--disabled {
+        cursor: default;
+
+        .inputText__input {
+            background-color: cl("black", 0.01);
+            color: cl("text-disabled");
+            pointer-events: none;
+            cursor: default;
+            resize: none;
+        }
+        .inputText__placeholder {
+            color: cl("text-disabled");
+            cursor: default;
+        }
+    }
+
+    &--headBanner {
+        border-radius: 6px;
+        .inputText__input {
+            border-radius: 6px;
+        }
+    }
+}
+
+.errorDescription {
+    color: cl("error");
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 3px 0 0 12px;
+    display: none;
+}

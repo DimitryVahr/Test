@@ -1,0 +1,105 @@
+@import "~@/styles/common.scss";
+
+.regularFlights {
+  background-color: cl("background-secondary");
+
+  & > div {
+    padding: 120px 0 240px 0;
+    overflow: hidden;
+  }
+  &__content {
+    display: flex;
+  }
+
+  &__info {
+    min-width: 560px;
+    max-width: 640px;
+
+    .h2 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__map {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 12px;
+    top: -480px;
+  }
+
+  @include break-xl {
+    &__info {
+      min-width: 520px;
+    }
+
+    &__icon {
+      left: -45px;
+      top: -320px;
+      width: 820px;
+    }
+  }
+
+  @include break-lg {
+    & > div {
+      padding: 56px 0 80px 0;
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    &__content {
+      flex-direction: column;
+    }
+
+    &__info {
+      padding: 0 20px;
+      min-width: auto;
+      max-width: none;
+
+      .h2 {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__map {
+      overflow-x: hidden;
+      left: 25%;
+      height: 629px;
+      max-width: none;
+      border-top: 1px solid cl("divider");
+    }
+
+    &__icon {
+      left: -14px;
+      top: -256px;
+      width: 629px;
+      height: 879px;
+    }
+  }
+
+  @include break-sm {
+    &__map {
+      left: 0;
+    }
+  }
+}
+
+.special .regularFlights__content {
+  justify-content: space-between;
+}
+
+
+.special .regularFlights__map {
+  background: transparent !important;
+  display: none;
+}
+
+.special .regularFlights__icon {
+  background: transparent !important;
+}

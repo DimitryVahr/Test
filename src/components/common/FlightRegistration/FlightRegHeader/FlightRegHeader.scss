@@ -1,0 +1,74 @@
+@import "~@/styles/common.scss";
+
+.flightRegHeader {
+  width: 100%;
+  height: auto;
+  background: url("~@/assets/img/headbannerBg/mountainFull.png") center no-repeat;
+  background-size: cover;
+
+  &__container{
+    padding: 128px 64px 72px 64px;
+
+    @include break-lg {
+      padding: 100px 20px 56px 20px;
+    }
+  }
+
+  &__title{
+    font-size: 48px;
+    line-height:48px;
+    font-weight: 900;
+    color: cl('white');
+
+    @include break-lg {
+      font-size: 36px;
+      line-height:40px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    margin-top: 32px;
+
+    @include break-lg {
+      margin-top: 24px;
+      flex-direction: column;
+    }
+  }
+
+  &__select {
+    margin-right: 1px;
+    max-width: 335px;
+
+    @include break-lg {
+      width: 100%;
+      max-width: none;
+      border-bottom: 1px solid cl('divider');
+    }
+  }
+
+  &__datepickers-wrapper {
+    width: 100%;
+    display: flex;
+
+    @include break-lg {
+      border-bottom: 1px solid var(--color-divider);
+    }
+  }
+
+  &__datepicker {
+    margin-right: 1px;
+
+    @include break-lg {
+      margin: 0;
+
+      &:first-child{
+        border-right: 1px solid var(--color-divider);
+      }
+    }
+  }
+}
+
+.special .flightRegHeader__select {
+  height: 150px;
+}

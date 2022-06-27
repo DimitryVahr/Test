@@ -1,0 +1,21 @@
+@import "~@/styles/common.scss";
+
+.selectItem {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: cl('white');
+  width: 100%;
+  color: cl('dark');
+  height: 56px;
+  padding-left: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: cl('accent-lighter', 0.05);
+  }
+
+  &--selected {
+    background-color:cl('accent', 0.1) ;
+  }
+}

@@ -1,0 +1,139 @@
+@import "~@/styles/common.scss";
+
+.flightRegTariffCard {
+  background-color: cl("background-secondary");
+  padding: 20px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  color: cl("dark");
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+  &_active {
+    background-color: cl("accent");
+    color: cl("white");
+
+    .flightRegTariffCard__bonuses {
+      color: cl("white");
+    }
+  }
+
+  &_error {
+    .flightRegTariffCard__title svg {
+      color: cl("error");
+    }
+  }
+
+  &_disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &__title {
+    margin-right: -6px;
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    white-space: pre-line;
+
+    svg {
+      display: inline;
+      color: cl("text-disabled");
+      vertical-align: top;
+      transition: color 0.2s ease-in-out;
+    }
+  }
+
+  &__content {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price {
+    height: 48px;
+    margin: auto 0 20px;
+
+    b {
+      font-size: 18px;
+      line-height: 24px;
+      display: block;
+    }
+  }
+
+  &__bonuses {
+    font-size: 14px;
+    line-height: 20px;
+    color: cl("text-secondary");
+    display: block;
+  }
+
+  &__button {
+    background-color: transparent;
+    width: 100%;
+
+    &_disabled,
+    &_disabled:hover,
+    &_disabled:active {
+      border: 1px solid cl("text-disabled");
+      color: cl("text-disabled");
+      cursor: default;
+    }
+  }
+
+  @include break-md {
+    height: auto;
+    padding: 16px;
+
+    &_active {
+      background-color: cl("background-secondary");
+      color: cl("dark");
+
+      .flightRegTariffCard__bonuses {
+        color: cl("text-secondary");
+      }
+    }
+
+    &__title {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 16px;
+    }
+
+    &__content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &__price {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: auto;
+
+      b {
+        font-size: 16px;
+      }
+    }
+
+    &__button {
+      background-color: transparent;
+      height: auto;
+      padding: 7px 27.5px;
+      max-width: 120px;
+    }
+  }
+}
+
+.special .flightRegTariffCard {
+  height: 450px;
+  border: 1px solid;
+}
+
+.special .flightRegTariffCard__price {
+  height: 130px;
+}

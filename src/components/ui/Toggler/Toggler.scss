@@ -1,0 +1,75 @@
+@import "~@/styles/common.scss";
+
+.toggler {
+  display: flex;
+  align-items: center;
+
+  @include break-md {
+    display: block;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    @include break-md {
+      margin-top: 16px;
+    }
+  }
+
+  &__bonuses {
+    margin-right: 10px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__slider {
+    position: relative;
+    background-color: cl("border");
+    width: 36px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      background-color: cl("white");
+      border-radius: 50%;
+      transition: left 0.2s ease-in-out;
+    }
+  }
+
+  &__input:checked ~ span &__slider,
+  &__input:checked ~ &__slider {
+    background-color: cl("accent");
+
+    &::after {
+      left: calc(100% - 18px);
+    }
+  }
+
+  &__text {
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    color: cl("dark");
+  }
+}
+
+.special .toggler__slider {
+  background-color: cl('border') !important;
+}
+
+.special .toggler__input:checked ~ span .toggler__slider,
+.special .toggler__input:checked ~ .toggler__slider {
+  background-color: cl('accent') !important;
+}

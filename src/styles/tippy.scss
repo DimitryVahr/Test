@@ -1,0 +1,27 @@
+@import "~@/styles/common.scss";
+@import '~tippy.js/dist/tippy.css';
+@import '~tippy.js/animations/shift-away.css';
+
+.tippy-box[data-theme~='light'] {
+
+  border-radius: 10px;
+  background-color: cl('white');
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.1)) drop-shadow(0px 14px 25px rgba(0, 0, 0, 0.05));
+
+  .tippy-content {
+    color: cl('dark');
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 15px 20px 20px 20px;
+
+    @include break-lg {
+      width: 314px;
+      padding: 15px 7.5px 20px 7.5px;
+    }
+  }
+
+  .tippy-arrow{
+    color: cl('white');
+  }
+}

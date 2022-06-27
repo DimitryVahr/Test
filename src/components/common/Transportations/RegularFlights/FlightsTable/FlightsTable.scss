@@ -1,0 +1,69 @@
+@import "~@/styles/common.scss";
+
+.flightsTable {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: cl("dark");
+    font-size: 18px;
+    line-height: 28px;
+    padding: 16px 0;
+
+    &--head {
+      color: cl("text-secondary");
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    & + & {
+      border-top: 1px solid cl("divider");
+    }
+  }
+
+  &__cell {
+    &--schedule {
+      width: 100%;
+      max-width: 192px;
+      margin-left: 20px;
+    }
+  }
+
+  @include break-lg {
+    &__row {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 12px 0;
+      border-bottom: 1px solid cl("divider");
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &--head {
+        display: none;
+      }
+
+      & + & {
+        border-top: none;
+      }
+    }
+
+    &__cell {
+      &--schedule {
+        margin-left: 0;
+      }
+
+      & + & {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  @include break-md {
+    &__row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

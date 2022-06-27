@@ -1,0 +1,111 @@
+@import "~@/styles/common.scss";
+
+.vc-changer {
+  .vc {
+
+    &-container {
+      font-family: $primary-font-family;
+    }
+
+    &-pane {
+      padding: 12px 0;
+    }
+
+    &-header {
+      padding: 0 0 10px 0;
+      border-bottom: 1px solid cl('divider');
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &-title {
+      text-transform: capitalize;
+      color: cl('dark');
+    }
+
+    &-weeks {
+      padding: 10px 0 0 0;
+    }
+
+    &-day,
+    &-day-content,
+    &-day-layer {
+      width: 44px;
+      height: 44px;
+    }
+
+    &-highlight {
+      width: 40px;
+      height: 40px;
+    }
+
+    &-day-content {
+      font-weight: 400 !important;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+
+    &-highlight-base-start,
+    &-highlight-base-middle,
+    &-highlight-base-end {
+      background-color: cl('accent', 0.1) !important;
+    }
+
+    &-highlight-base-middle {
+      width: 100%;
+      border-radius: 0 !important;
+      border-left-width: 0 !important;
+      border-right-width: 0 !important;
+      margin: 0 -1px;
+    }
+
+  }
+}
+
+
+.vc-container.vc-blue {
+  --blue-600: var(--color-accent);
+}
+
+.datepicker {
+
+  &__wrapper {
+    width: 100%;
+  }
+
+
+  &_today {
+    border: 1px solid cl('border');
+  }
+
+  &_today-content,
+  &_weekend {
+    color: cl('error')
+  }
+
+  &__calendar-btn {
+    color: cl('icon-input');
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    right: 4px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.special .datepicker__wrapper{
+  background: transparent !important;
+  max-width: none !important;
+  min-width: 190px !important;
+  width: auto !important;
+}
+
+// .special .datepicker__wrapper div{
+//   background: transparent !important;
+// }

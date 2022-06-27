@@ -1,0 +1,49 @@
+@import "~@/styles/common.scss";
+
+.safetyComfortCard {
+  padding-bottom: 16px;
+  width: 100%;
+  max-width: 528px;
+  position: relative;
+
+  &:first-child::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 2px;
+    position: absolute;
+    top: 15px;
+    left: -112px;
+    background-color: cl("accent");
+  }
+
+  & + & {
+    margin-left: 32px;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @include break-xl {
+    &:first-child::before {
+      display: none;
+    }
+  }
+
+  @include break-md {
+    padding-bottom: 0;
+    & + & {
+      margin-left: 0;
+      margin-top: 40px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 16px;
+    }
+  }
+}

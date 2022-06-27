@@ -1,0 +1,153 @@
+@import "~@/styles/common.scss";
+.transportationWorkTabs {
+  width: 100%;
+
+  &__btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    width: 17%;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+    object-fit: contain;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    & > img {
+      width: 100%;
+    }
+
+    &:hover {
+      border-bottom: 2px solid cl("text-disabled");
+    }
+
+    &:focus {
+      border-bottom: 2px solid cl("accent");
+    }
+
+    &--selected {
+      border-bottom: 2px solid cl("accent");
+      font-weight: 700;
+      transition: 0.3s;
+    }
+  }
+
+  &__heliName {
+    margin-bottom: 12px;
+  }
+
+  &__stats {
+    width: 100%;
+    margin-top: 64px;
+  }
+
+  &__statsItemWrap {
+    display: flex;
+    justify-content: space-between;
+
+    & + & {
+      margin-top: 64px;
+    }
+  }
+
+  &__statsItem {
+    max-width: 416px;
+    width: 100%;
+    height: 112px;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 64px;
+  }
+
+  &__statsDescription {
+    display: block;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 20px;
+  }
+}
+
+@include break-xl {
+  .transportationWorkTabs {
+    &__statsItem {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 46px;
+    }
+  }
+}
+
+@include break-lg {
+  .transportationWorkTabs {
+    &__btn {
+      width: fit-content;
+      height: 32px;
+      border-bottom: 2px solid cl('text-disabled');
+
+      & > img {
+        display: none;
+      }
+
+      &--selected {
+        font-weight: 700;
+        border-bottom: 2px solid cl('accent');
+      }
+    }
+
+    &__statsItemWrap {
+      display: block;
+      
+      & + & {
+        margin-top: 40px;
+      }
+    }
+
+    &__statsItem {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 46px;
+      margin-top: 40px;
+      height: 86px;
+    }
+
+    &__statsDescription { 
+      margin-top: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__heliName {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    } 
+  }
+}
+
+@include break-sm {
+  .transportationWorkTabs {
+    &__heliName {
+      font-size: 14px;
+    }
+
+    &__btns {
+      margin-top: -17px;
+    }
+
+    &__stats {
+      margin-top: 48px;
+    }
+
+    &__statsItem {
+      height: auto;
+    }
+  }
+
+}

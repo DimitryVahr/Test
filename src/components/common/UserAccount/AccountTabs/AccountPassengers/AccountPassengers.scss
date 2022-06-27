@@ -1,0 +1,55 @@
+@import "~@/styles/common.scss";
+
+.accountPassengers {
+
+  &__addPassengerBtn {
+    margin-top: 40px;
+    
+    &Table {
+      margin-top: 0;
+      @include break-sm {
+        width: 100%;
+      }
+    }
+
+    &Icon {
+      position: relative;
+      display: inline-flex;
+      width: 14px;
+      height: 14px;
+      margin-right: 13px;
+  
+      &:after {
+        position: absolute;
+        content: " ";
+        top: 15%;
+        left: 7px;
+        width: 2px;
+        height: 14px;
+        background: cl("white");
+        border-radius: 50%;
+        transition: all 0.3s ease 0s;
+      }
+  
+      &:before {
+        position: absolute;
+        content: " ";
+        top: 15%;
+        left: 7px;
+        width: 2px;
+        height: 14px;
+        background: cl("white");
+        transition: all 0.3s ease 0s;
+        transform: rotate(90deg);
+      }
+    }
+  
+    @include break-md {
+      width: 100%;
+    }
+
+    @include break-sm {
+      padding: 15px;
+    }
+  }  
+}

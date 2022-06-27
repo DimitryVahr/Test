@@ -1,0 +1,63 @@
+@import "~@/styles/common.scss";
+
+.partners {
+  padding: 48px 0;
+  border-top: 1px solid cl("background-secondary");
+
+  &__content {
+    &_desktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &_mobile {
+      display: none;
+    }
+  }
+
+  @include break-xl {
+    &__content {
+      &_desktop {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @include break-lg {
+    padding: 40px 0 10px;
+    border-top: none;
+
+    .container {
+      padding: 0;
+    }
+
+    &__content {
+      &_desktop {
+        display: none;
+      }
+
+      &_mobile {
+        padding: 1px 64px 20px;
+        display: flex;
+        overflow-x: auto;
+      }
+    }
+  }
+
+  @include break-md {
+    &__content {
+      &_mobile {
+        padding: 1px 20px 20px;
+        justify-content: center;
+      }
+    }
+  }
+
+  @include break-sm {
+    &__content {
+      &_mobile {
+        justify-content: unset;
+      }
+    }
+  }
+}

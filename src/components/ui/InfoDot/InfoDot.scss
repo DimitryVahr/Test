@@ -1,0 +1,28 @@
+@import "~@/styles/common.scss";
+
+.infoDot {
+  width: 24px;
+  height: 24px;
+  color: cl('white');
+
+  &__info-cloud-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.1)) drop-shadow(0px 14px 25px rgba(0, 0, 0, 0.05));
+
+    :hover {
+      cursor: default;
+    }
+  }
+
+  &__button {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+    transition: none;
+  }
+}

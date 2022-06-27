@@ -1,0 +1,14 @@
+@import "~@/styles/common.scss";
+
+.flightRegTitle {
+  display: flex;
+  align-items: flex-start;
+
+  @include break-xl {
+    margin-bottom: 24px;
+  }
+
+  @include break-lg {
+    flex-direction: column;
+  }
+}

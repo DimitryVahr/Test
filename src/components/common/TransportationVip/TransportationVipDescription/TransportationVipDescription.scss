@@ -1,0 +1,299 @@
+@import "~@/styles/common.scss";
+
+.vipDescription {
+  padding: 120px 0;
+
+  &__img {
+    margin-top: 64px;
+    width: 100%;
+    & > img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title--mobile {
+    display: none;
+  }
+}
+
+.vipDescriptionItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+
+  &--first {
+    margin-top: 72px;
+  }
+
+  &--salon {
+    padding-left: 141px;
+    margin-top: 60px;
+  }
+
+  &__imgLarge {
+    max-width: 528px;
+    min-width: 400px;
+    width: 100%;
+    max-height: 352px;
+    margin-right: 20px;
+
+    &--salon {
+      margin-right: 0;
+    }
+
+    & > img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__description {
+    min-width: 400px;
+    width: 640px;
+    margin-right: 31px;
+
+    &--salon {
+      padding-top: 44px;
+      max-width: 528px;
+      min-width: 300px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+    max-width: 528px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &__images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 64px;
+
+    & > img {
+      width: 48%;
+      &:first-child {
+        margin-right: 32px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__facts {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__fact {
+    color: cl("accent");
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 60px;
+    margin-right: 28px;
+  }
+
+  &__factsText {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &__button {
+    margin-top: 32px;
+
+    &--mobile {
+      display: none;
+      position: fixed;
+      bottom: 23px;
+      left: 20px;
+      width: calc(100% - 40px);
+    }
+  }
+}
+
+
+
+@include break-lg {
+  .vipDescription {
+    padding: 80px 0;
+  }
+
+  .vipDescriptionItem {
+    flex-direction: column;
+    margin-top: 48px;
+
+    &--first {
+      margin-top: 40px;
+    }
+
+    &--salon {
+      padding: 0;
+      margin-top: 47px;
+    }
+
+    &__title {
+      margin-top: 48px;
+
+      &--salon {
+        margin-top: 0;
+      }
+    }
+
+    &__facts {
+      margin-bottom: 48px;
+    }
+
+    &__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 48px;
+    }
+
+    &__images {
+      margin-top: 0;
+      & > img {
+        width: 48%;
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__imgLarge {
+      min-width: 0;
+      width: 100%;
+      margin: 0;
+    }
+
+    &__description {
+      min-width: 0;
+      width: 100%;
+      margin-right: 31px;
+
+      &--salon {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &__button {
+      display: none;
+
+      &--mobile {
+        display: block;
+      }
+    }
+  }
+}
+
+@include break-md {
+  .vipDescriptionItem {
+    &__imgLarge {
+      max-width: none;
+      max-height: none;
+      min-height: 248px;
+    }
+
+    &__fact {
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 46px;
+      margin-right: 16px;
+    }
+
+    &__factsText {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__text {
+      margin-bottom: 24px;
+    }
+
+    &__images {
+      flex-direction: column;
+      & > img {
+        width: 304px;
+        &:first-child {
+          margin: 23px auto 20px;
+        }
+        &:last-child {
+          margin-left: -20px;
+          height: 190px;
+        }
+      }
+    }
+
+    &__title {
+      margin-top: 41px;
+      margin-bottom: 16px;
+      &--salon {
+        margin-top: 0;
+      }
+
+      &--flights {
+        margin-top: 46px;
+      }
+    }
+  }
+}
+
+@include break-sm {
+  .vipDescription {
+    &__title {
+      display: none;
+      padding: 0 20px;
+
+      &--mobile {
+        display: block;
+        padding: 0 20px;
+      }
+    }
+
+    &__container {
+      padding: 0;
+    }
+
+    &__img {
+      margin-top: 47px;
+      height: 179px;
+      & > img {
+        height: 100%;
+      }
+    }
+  }
+
+  .vipDescriptionItem {
+
+    &--flights {
+      margin-top: 43px;
+    }
+    &__description {
+      padding: 0 20px;
+    }
+
+    &__imgLarge {
+      &--flights {
+        min-height: 0;
+        display: flex;
+        justify-content: flex-end;
+        &>img {
+          width: 77%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

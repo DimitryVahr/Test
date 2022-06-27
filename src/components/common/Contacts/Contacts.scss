@@ -1,0 +1,572 @@
+@import "~@/styles/common.scss";
+
+.mainContacts {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 72px;
+  border-bottom: 1px solid cl("divider");
+  padding-bottom: 120px;
+  margin-bottom: 120px;
+
+  @include break-lg {
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include break-xl {
+    display: block;
+    padding-top: 0;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    min-width: 416px;
+    max-width: 416px;
+    width: 100%;
+
+    @include break-xl {
+      margin-bottom: 24px;
+    }
+
+    @include break-lg {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    @include break-sm {
+      min-width: 0;
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    max-width: 864px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 34px;
+
+    @include break-xl {
+      margin-left: 0;
+    }
+
+    @include break-xl {
+      display: block;
+    }
+
+    &_phone {
+      width: 397px;
+      display: flex;
+      flex-direction: column;
+
+      @include break-xl {
+        margin-bottom: 29px;
+        width: 100%;
+        margin-right: 24px;
+      }
+
+      @media (max-width: 280px) {
+        width: 100%;
+      }
+    }
+
+    &_phoneIcon {
+      width: 48px;
+      height: 48px;
+      margin-right: 15px;
+      color: cl("accent");
+
+      @include break-lg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &_phoneNumber {
+      color: cl("dark");
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 48px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+
+      @include break-lg {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      &:hover {
+        color: cl('accent');
+      }
+
+      &:active {
+        color: cl('accent-darker')
+      }
+
+
+    }
+
+    &_phoneDescription {
+      color: cl("dark");
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      margin-left: 62px;
+      margin-top: 20px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 3px;
+
+      @include break-lg {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        margin-left: 40px;
+        margin-top: 8px;
+      }
+    }
+
+    &_buttonPrimary {
+      width: 232px;
+      @include break-lg {
+        display: none;
+      }
+    }
+
+    &_buttonSecondary {
+      width: 232px;
+      @media (min-width: 1024px) {
+        display: none;
+      }
+      @media (max-width: 375px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.contactsContent {
+  &__management {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 1px cl("divider");
+    padding: 60px;
+    background: url("~@/assets/img/contacts/backgroundManagement.png") no-repeat;
+    background-position: 60px 60px;
+
+    @include break-lg {
+      box-shadow: none;
+      padding: 40px 0 0 26px;
+      background-position: 0px 0px;
+      background-size: 70px 50px;
+      margin: -24px -10px 0 -10px;
+    }
+
+    @media (max-width: 280px) {
+      margin: 0;
+      padding: 0;
+      background: none;
+    }
+
+    &_text {
+      width: 100%;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 30px;
+      margin: 0 0 32px 64px;
+      padding: 48px 62px 0 0;
+
+      @include break-lg {
+        padding: 0 0 24px 0;
+        margin: 0;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    &_contactWrapper {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-left: 64px;
+
+      @media (max-width: 1350px) {
+        display: block;
+      }
+
+      @include break-lg {
+        margin-left: 0;
+      }
+    }
+
+    &_contact {
+      min-width: 350px;
+      max-width: 350px;
+      display: flex;
+      align-items: flex-end;
+
+      @media (max-width: 1350px) {
+        margin-bottom: 32px;
+      }
+
+      @include break-md {
+        min-width: 0;
+        max-width: none;
+        width: 100%;
+      }
+    }
+
+    &_contactPhoto {
+      min-width: 80px;
+      height: 80px;
+      background: url("~@/assets/img/contacts/boss.jpg");
+      border-radius: 50%;
+      margin-right: 16px;
+
+      @media (max-width: 280px) {
+        margin-right: 10px;
+      }
+    }
+
+    &_contactInfo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_contactName {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
+      display: block;
+
+      @include break-lg {
+        width: 150px;
+      }
+    }
+
+    &_contactPosition {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &_buttonSecondary {
+      max-width: 232px;
+      width: 100%;
+
+      @media (max-width: 375px) {
+        max-width: none;
+        width: 100%;
+      }
+    }
+  }
+
+  &__departaments {
+    margin-right: -32px;
+    display: flex;
+
+    @media (max-width: 1250px) {
+      display: block;
+      margin-right: 0;
+    }
+
+    &_item {
+      & + & {
+        margin-left: 213px;
+      }
+
+      @media (max-width: 1250px) {
+        & + & {
+          margin-left: 0;
+          margin-top: 60px;
+          margin-bottom: 92px;
+        }
+      }
+    }
+  }
+
+  &__departament {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 416px;
+    width: 100%;
+
+    & + & {
+      margin-top: 90px;
+    }
+
+    @include break-lg {
+      & + & {
+        margin-top: 47px;
+      }
+    }
+
+    &_name {
+      max-width: 416px;
+      width: 100%;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 20px;
+      display: block;
+      max-width: 416px;
+      width: 100%;
+
+      @include break-lg {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &_mail {
+      color: cl("accent");
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      text-decoration: none;
+
+      @include break-lg {
+        margin-top: 12px;
+      }
+
+      &:hover {
+        color: cl('accent-lighter');
+      }
+    }
+
+    &_mailIcon {
+      margin-top: -4px;
+      margin-right: 12px;
+      margin-left: -1px;
+      // color: cl('accent');
+
+      @include break-lg {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &__office {
+    display: flex;
+    flex-direction: column;
+    max-width: 864px;
+    width: 100%;
+
+    &_title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 20px;
+
+      @include break-lg {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 8px;
+      }
+    }
+
+    &_adress {
+      max-width: 416px;
+      width: 100%;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 20px;
+
+      @include break-lg {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 24px;
+      }
+    }
+
+    &_route {
+      display: none;
+
+      @include break-md {
+        display: flex;
+        align-items: center;
+        color: cl("accent");
+        margin-top: 14px;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        background: none;
+      }
+    }
+
+    &_routeIcon {
+      margin-right: 16px;
+    }
+
+    &_info {
+      display: flex;
+      align-items: center;
+      color: cl("accent");
+      margin-top: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+
+      @include break-lg {
+        margin-bottom: 14px;
+        margin-top: 24px;
+      }
+
+      &:hover {
+        color: cl('accent-lighter');
+      }
+
+      &:active {
+        color: cl('accent-darker');
+      }
+    }
+
+    &_infoIcon {
+      margin-right: 15px;
+
+      @include break-lg {
+        margin-right: 18px;
+      }
+    }
+
+    &_map {
+      margin-top: -80px;
+      margin-bottom: 120px;
+      max-width: 864px;
+      height: 360px;
+      margin-left: 448px;
+      overflow: hidden;
+      background: rgba(170, 223, 163, 0.344) !important;
+
+      @include break-xl {
+        margin-left: 352px;
+      }
+      
+
+      @include break-lg {
+        max-width: none;
+        width: 100%;
+        margin-left: 0;
+      }
+
+      @include break-md {
+        display: none;
+      }
+    }
+
+    &_mapMobile {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      margin: 0px;
+    }
+
+    &_mapClose {
+      position: relative;
+      position: fixed;
+      width: 60px;
+      height: 50px;
+      top: 0px;
+      right: 0px;
+      background: none;
+      color: cl('dark');
+      border: none;
+
+      &:after {
+        position: absolute;
+        content: " ";
+        width: 20px;
+        height: 2px;
+        right: 15px;
+        background: cl("dark");
+        transition: all 0.3s ease 0s;
+        transform: rotate(45deg);
+      }
+    
+      &:before {
+        position: absolute;
+        content: " ";
+        width: 20px;
+        height: 2px;
+        right: 15px;
+        background: cl("dark");
+        transition: all 0.3s ease 0s;
+        transform: rotate(-45deg);
+      }
+
+      @media(min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  &__requisites {
+    display: flex;
+    flex-direction: column;
+    max-width: 864px;
+    width: 100%;
+
+    &_copy {
+      display: flex;
+      align-items: center;
+      color: cl("accent");
+      background: transparent;
+      border: none;
+      padding: 1px 0 0 1px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      cursor: pointer;
+      font-family: $primary-font-family;
+      margin-top: 1px;
+      letter-spacing: 0.1px;
+      transition: 0.3s;
+
+      &:hover {
+        color: cl('accent-lighter');
+      }
+
+      &:active {
+        color: cl('accent-darker');
+      }
+
+      & + & {
+        margin-top: 20px;
+      }
+
+      @include break-lg {
+        padding: 3px 0 20px 1px;
+
+        & + & {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &_copyIcon {
+      margin-right: 18px;
+    }
+  }
+}
+
+.special .contactsContent__office_map {
+  display: none;
+}

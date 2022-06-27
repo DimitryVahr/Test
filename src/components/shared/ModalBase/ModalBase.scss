@@ -1,0 +1,74 @@
+@import "~@/styles/common.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: cl("white");
+  display: flex;
+  overflow: hidden;
+  z-index: 100;
+
+  &__bg-image {
+    min-height: 100%;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+
+    @include break-lg {
+      display: none;
+    }
+  }
+
+  &__content-wrapper {
+    width: 50%;
+    min-height: 100%;
+    padding: 136px 0 72px 0;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+
+    @include break-lg {
+      width: 100%;
+      padding: 16px 20px 20px 20px;
+    }
+  }
+
+  &__content {
+    width: 416px;
+    // overflow: auto;
+
+    @include break-lg {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
+    }
+  }
+
+  &__close-btn {
+    color: cl("icon-burger");
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &:hover {
+      color: cl("dark");
+    }
+
+    &--disabled {
+      color: cl("text-disabled");
+    }
+  }
+}
+
+.special .modal__close-btn {
+  top: 64px;
+}

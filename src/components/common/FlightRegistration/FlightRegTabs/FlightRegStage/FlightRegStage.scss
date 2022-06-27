@@ -1,0 +1,34 @@
+@import "~@/styles/common.scss";
+
+.flightRegStage {
+
+  &__wrapper {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid cl('divider-darker');
+  }
+
+  &__stage {
+    font-size: 16px;
+    line-height: 24px;
+    color: cl('border');
+    transition: color .2s ease-in-out, font-weight .2s ease-in-out;
+
+    &_current {
+      color: cl('dark');
+      font-weight: 700;
+    }
+  }
+
+  &__arrow {
+    min-height: 16px;
+    min-width: 16px;
+    color: cl('border');
+    margin: 0 16px;
+
+    @include break-lg {
+      margin: 0 8px;
+    }
+  }
+}

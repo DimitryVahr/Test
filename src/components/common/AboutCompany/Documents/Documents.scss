@@ -1,0 +1,63 @@
+@import "~@/styles/common.scss";
+
+.documents {
+  padding-bottom: 120px;
+
+  &__groups {
+    display: flex;
+    margin: calc(64px - 16px) -16px calc(68px - 16px);
+    flex-wrap: wrap;
+  }
+
+  &__politic {
+    & + & {
+      margin-top: 72px;
+    }
+
+    .h3 {
+      white-space: pre;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__politics {
+    display: flex;
+
+    .docsCard {
+      margin: 0;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .docsCard + .docsCard {
+      margin-left: 32px;
+    }
+  }
+
+  @include break-lg {
+    padding-bottom: 0;
+
+    &__groups {
+      margin-top: calc(24px - 16px);
+      margin-bottom: calc(56px - 16px);
+    }
+
+    &__politic {
+      & + & {
+        margin-top: 56px;
+      }
+
+      .h3 {
+        margin-bottom: 24px;
+      }
+    }
+
+    &__politics {
+      flex-direction: column;
+
+      .docsCard + .docsCard {
+        margin-left: 0;
+      }
+    }
+  }
+}

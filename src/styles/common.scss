@@ -1,0 +1,113 @@
+// Variables
+$colors: (
+  'accent': #1D89ED,
+  'accent-lighter': #3F9BF0,
+  'accent-darker': #1974C9,
+  'text-secondary': #768899,
+  'text-disabled': #B0BBC7,
+  'text-tertiary': #919191,
+  'transparent': transparent,
+  'background-secondary': #F4F7F9,
+  'background-input': #EEF6FE,
+  'background-input-error': #FCE7E6,
+  'icon-input': #4A7AA7,
+  'icon-burger': #8D8D8D,
+  'success': #219653,
+  'error': #EB5757,
+  'border': #B0BBC7,
+  'border-hover': #5E5F62,
+  'border-focus':#0072FF,
+  'divider': #DCE3E9,
+  'divider-darker': #D9D9DE,
+  'white': #FFFFFF,
+  'dark':#1D1D1D,
+  'black': #000000,
+  'facebook': #0561AF,
+  'vk': #4D75A2,
+);
+
+$fallback-font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial,
+sans-serif;
+$primary-font-family: 'Proxima Nova', $fallback-font-family;
+
+$xsm: 321px;
+$sm: 576px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1440px;
+
+// Functions
+@function hex-to-rgb($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+@function cl($name, $opacity: false) {
+  @if $opacity {
+    @return rgba(var(--color-#{unquote($name)}--rgb), $opacity);
+  } @else {
+    @return var(--color-#{unquote($name)});
+  }
+}
+
+// Mixins
+@mixin button-colors($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+}
+
+@mixin break-xsm() {
+  @media (max-width: $xsm - 1) {
+    @content;
+  }
+}
+
+@mixin break-sm() {
+  @media (max-width: $sm - 1) {
+    @content;
+  }
+}
+
+@mixin break-md() {
+  @media (max-width: $md - 1) {
+    @content;
+  }
+}
+
+@mixin break-lg() {
+  @media (max-width: $lg - 1) {
+    @content;
+  }
+}
+
+@mixin break-xl() {
+  @media (max-width: $xl - 1) {
+    @content;
+  }
+}
+
+@mixin break-xxl() {
+  @media (max-width: $xxl - 1) {
+    @content;
+  }
+}
+
+@mixin break-lg-up() {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin text($font-size, $line-height, $color: '', $font-weight: '',) {
+  font-size: $font-size;
+  line-height: $line-height;
+
+  @if $color != '' {
+    color: cl($color);
+  }
+
+  @if $font-weight != '' {
+    font-weight: $font-weight;
+  }
+}

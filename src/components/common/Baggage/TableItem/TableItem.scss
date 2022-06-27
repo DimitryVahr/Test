@@ -1,0 +1,35 @@
+@import "~@/styles/common.scss";
+
+.tableItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0 16px 0;
+  border-bottom: 1px solid #DCE3E9;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+
+  @include break-lg {
+    min-height: 80px;
+  }
+
+  &__route {
+    max-width: 780px;
+    margin-right: 30px;
+    @include break-lg {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  &__weight {
+    display: block;
+    min-width: 60px;
+
+    @include break-lg {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

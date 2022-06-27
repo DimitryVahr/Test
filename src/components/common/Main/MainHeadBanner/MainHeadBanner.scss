@@ -1,0 +1,15 @@
+@import "~@/styles/common.scss";
+
+.mainHeadBanner {
+
+  &__title {
+    color: cl('white');
+    margin-top: 180px;
+    margin-bottom: 48px;
+
+    @include break-lg{
+      margin-top: 108px;
+    }
+  }
+
+}

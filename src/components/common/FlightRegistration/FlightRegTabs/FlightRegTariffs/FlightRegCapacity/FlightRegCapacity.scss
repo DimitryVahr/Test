@@ -1,0 +1,88 @@
+@import "~@/styles/common.scss";
+
+.flightRegCapacity {
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: cl("dark");
+
+  &__transport {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+
+  &__arrow {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    background-color: cl("border");
+    transform: translate(0, -50%);
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 6px;
+      height: 1px;
+      position: absolute;
+      right: -1px;
+      top: -2px;
+      background-color: cl("border");
+      border-radius: 1px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      top: 2px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__available {
+    color: cl("text-secondary");
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  @include break-lg {
+    margin: 8px 0;
+
+    &__transport {
+      margin-bottom: 0;
+    }
+
+    &__transport,
+    &__available {
+      margin-left: 23px;
+    }
+
+    &__arrow {
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background-color: cl("border");
+      transform: none;
+
+      &::before,
+      &::after {
+        width: 1px;
+        height: 6px;
+        right: -2px;
+        top: auto;
+        bottom: -1px;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        left: -2px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

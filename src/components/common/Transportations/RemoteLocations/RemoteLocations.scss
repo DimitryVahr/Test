@@ -1,0 +1,121 @@
+@import "~@/styles/common.scss";
+
+.remoteLocations {
+  padding-bottom: 120px;
+
+  &__video {
+    margin-top: -120px;
+    width: 100%;
+    max-width: 1320px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__info {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    & > div {
+      width: 100%;
+      max-width: 528px;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 28px;
+    padding-top: 8px;
+    margin-left: 32px;
+
+    & > p {
+      margin-bottom: 40px;
+    }
+  }
+  
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 56px;
+    background: cl("accent");
+    color: cl("white");
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background: cl("accent-lighter");
+    }
+
+    &:active {
+      background: cl("accent-darker");
+    }
+  }
+  @include break-lg {
+    .container {
+      padding: 0;
+    }
+
+    &__video {
+      margin-top: 0;
+    }
+
+    &__info {
+      margin-top: 32px;
+      padding: 0 64px;
+    }
+  }
+
+  @include break-md {
+    padding-bottom: 80px;
+
+    &__video {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+
+      img { 
+        width: auto;
+        max-height: 224px;
+      }
+    }
+
+    &__info {
+      flex-direction: column;
+      padding: 0 20px;
+
+      & > div {
+        max-width: none;
+      }
+    }
+
+    &__title {
+      margin-bottom: 32px;
+    }
+
+    &__description {
+      margin-left: 0;
+
+      & > p {
+        margin-bottom: 32px;
+      }
+
+      & > button {
+        width: 100%;
+      }
+    }
+
+    &__btn {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,183 @@
+@import "~@/styles/common.scss";
+
+.flightFormsSmall {
+
+  &__togglers {
+    display: flex;
+
+    @include break-lg {
+      background: linear-gradient(0deg, cl('dark', 0.15), cl('dark', 0.15)), cl('accent');
+      padding: 2px;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__toggle-btn {
+    background-color: cl('accent-darker');
+    height: 48px;
+    position: relative;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    color: cl('border');
+
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include break-lg {
+      height: 32px;
+      background-color: cl('transparent');
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      min-width: 163.5px;
+      width: 100%;
+      padding: 0;
+      justify-content: center;
+    }
+
+
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 48px 0 0 32px;
+      border-color: transparent transparent transparent cl('accent-darker');
+      position: absolute;
+      right: -32px;
+      transition: 0.3s;
+
+      @include break-lg {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      margin-left: 16px;
+
+      @include break-lg {
+        margin-left: 0;
+      }
+    }
+
+    &.active {
+      background-color: cl('accent');
+      color: cl('white');
+
+      &:after {
+        border-color: transparent transparent transparent cl('accent');
+      }
+      &:hover{
+        background-color: cl('accent');
+
+        &:after {
+          border-color: transparent transparent transparent cl('accent');
+        }
+      }
+
+      @include break-lg {
+        box-shadow: 0px 1px 3px cl('dark', 0.15);
+      }
+    }
+
+    &.active:not(:last-child) {
+      z-index: 2;
+    }
+
+    &:hover{
+      background-color: cl('accent-lighter');
+
+      &:after {
+        border-color: transparent transparent transparent cl('accent-lighter');
+      }
+    }
+  }
+
+
+  &__toggle-text {
+
+    &.hide-in-mobile {
+      @include break-lg {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      @include break-lg-up {
+        display: none;
+      }
+    }
+  }
+
+  &__info-dot {
+    margin-left: 8px;
+    color: currentColor;
+
+    @include break-lg {
+      display: none;
+    }
+  }
+
+  &__form {
+    display: flex;
+
+    @include break-lg {
+      flex-direction: column;
+    }
+
+  }
+
+  &__select, &__input {
+    margin-right: 1px;
+    max-width: 335px;
+    width: 100%;
+
+    @include break-lg {
+      width: 100%;
+      max-width: none;
+      border-bottom: 1px solid cl('divider');
+    }
+  }
+
+  &__datepickers-wrapper {
+    width: 100%;
+    display: flex;
+
+    @include break-lg {
+      border-bottom: 1px solid var(--color-divider);
+    }
+  }
+
+  &__datepicker {
+    margin-right: 1px;
+
+    @include break-lg {
+      margin: 0;
+
+      &:first-child{
+        border-right: 1px solid var(--color-divider);
+      }
+    }
+  }
+
+  &__submit-btn {
+    margin-right: 1px;
+    white-space: nowrap;
+    height: auto;
+
+    @include break-lg {
+      margin: 0;
+    }
+  }
+
+}
+
+.special .flightFormsSmall__datepickers-wrapper {
+  background: transparent !important;
+}

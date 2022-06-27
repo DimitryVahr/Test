@@ -1,0 +1,18 @@
+@import "~@/styles/common.scss";
+
+.fillingForm {
+  max-width: 416px;
+  width: 100%;
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  @include break-lg {
+    display: none;
+  }
+}

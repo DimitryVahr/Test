@@ -1,0 +1,44 @@
+@import "~@/styles/common.scss";
+.headerNavDropdownItem {
+  &:hover {
+    .headerNavDropdownItem {
+      &__title {
+        color: cl("accent");
+      }
+
+      &__icon {
+        color: cl("accent");
+      }
+    }
+  }
+
+  &__title {
+    color: cl("dark");
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__icon {
+    display: inline;
+    color: cl("text-secondary");
+    transition: color 0.2s ease-in-out;
+    margin-bottom: -3px;
+  }
+
+  a {
+    text-decoration: none;
+    width: 100%;
+    display: inline-block;
+    padding: 20px 24px;
+  }
+
+  .button {
+    padding: 20px 24px;
+    width: 100%;
+    text-align: left;
+    height: auto;
+  }
+}
